@@ -101,7 +101,7 @@ PostgreSQL database hosted on Neon
 ## Demo Video
 
 YouTube demo link:
-[PLACEHOLDER – INSERT LINK HERE]
+https://youtu.be/v8L5gMcQrz0
 
 ## Future Enhancements
 
