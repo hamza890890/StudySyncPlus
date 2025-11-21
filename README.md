@@ -30,42 +30,66 @@ Fully functional REST API built with Express
 Basic responsive layout using React
 
 ## Technologies and Tools
-Layer	Stack
-Frontend	React, React Router, Axios
-Backend	Node.js, Express
-Database	PostgreSQL (hosted on Neon)
-External API	ZenQuotes API
-Authentication	JSON Web Token (JWT)
-Deployment	Frontend: Vercel, Backend: Render
-Database Schema
-Users Table
-Column	Type	Description
-id	SERIAL PRIMARY KEY	Unique user ID
-username	VARCHAR	User’s chosen display name
-email	VARCHAR	User’s email address
-password_hash	VARCHAR	Encrypted user password
-Tasks Table
-Column	Type	Description
-id	SERIAL PRIMARY KEY	Unique task ID
-user_id	INT	References Users.id
-title	VARCHAR	Task title
-description	TEXT	Task details
-completed	BOOLEAN	Task completion status
-API Endpoints
-Authentication
-Method	Endpoint	Description
-POST	/auth/register	Register a new user
-POST	/auth/login	Log in and receive a JWT
-Tasks
-Method	Endpoint	Description
-GET	/tasks	Get all tasks for logged-in user
-POST	/tasks	Create a new task
-PUT	/tasks/:id	Toggle or update completion status
-DELETE	/tasks/:id	Delete a task
-External API
-Method	Endpoint	Description
-GET	https://zenquotes.io/api/random
-	Retrieve a random motivational quote
+
+| Layer          | Stack                                                |
+|----------------|------------------------------------------------------|
+| **Frontend**   | React, React Router, Axios                           |
+| **Backend**    | Node.js, Express                                    |
+| **Database**   | PostgreSQL (hosted on Neon)                          |
+| **External API**| ZenQuotes API                                      |
+| **Authentication** | JSON Web Token (JWT)                             |
+| **Deployment** | Frontend: Vercel, Backend: Render                    |
+
+---
+
+## Database Schema
+
+### Users Table
+
+| Column         | Type               | Description                            |
+|----------------|--------------------|----------------------------------------|
+| `id`           | `SERIAL PRIMARY KEY`| Unique user ID                        |
+| `username`     | `VARCHAR`          | User’s chosen display name            |
+| `email`        | `VARCHAR`          | User’s email address                  |
+| `password_hash`| `VARCHAR`          | Encrypted user password               |
+
+### Tasks Table
+
+| Column         | Type               | Description                            |
+|----------------|--------------------|----------------------------------------|
+| `id`           | `SERIAL PRIMARY KEY`| Unique task ID                        |
+| `user_id`      | `INT`              | References `Users.id`                 |
+| `title`        | `VARCHAR`          | Task title                            |
+| `description`  | `TEXT`             | Task details                          |
+| `completed`    | `BOOLEAN`          | Task completion status                |
+
+---
+
+## API Endpoints
+
+### Authentication
+
+| Method | Endpoint        | Description                       |
+|--------|-----------------|-----------------------------------|
+| `POST` | `/auth/register` | Register a new user               |
+| `POST` | `/auth/login`    | Log in and receive a JWT          |
+
+### Tasks
+
+| Method | Endpoint          | Description                           |
+|--------|-------------------|---------------------------------------|
+| `GET`  | `/tasks`          | Get all tasks for the logged-in user |
+| `POST` | `/tasks`          | Create a new task                    |
+| `PUT`  | `/tasks/:id`      | Toggle or update completion status   |
+| `DELETE`| `/tasks/:id`     | Delete a task                        |
+
+---
+
+### External API
+
+| Method | Endpoint      | Description                           |
+|--------|---------------|---------------------------------------|
+| `GET`  | `/zenquotes`  | Fetch a random quote                  |
 ## Deployment
 
 Frontend hosted on Vercel
