@@ -1,9 +1,9 @@
-StudySync+
+### StudySync+
 
 StudySync+ is a full-stack web application designed to help students and self-learners organize their study tasks, track progress, and stay motivated. With built-in task management and daily motivational quotes, StudySync+ makes consistent learning both productive and inspiring.
 
-Project Overview
-Purpose
+## Project Overview
+## Purpose
 
 Many students struggle to maintain focus and consistency while studying independently. StudySync+ addresses this by providing a structured task management system along with daily motivational content to encourage consistent learning habits.
 
@@ -29,7 +29,7 @@ Fully functional REST API built with Express
 
 Basic responsive layout using React
 
-Technologies and Tools
+## Technologies and Tools
 Layer	Stack
 Frontend	React, React Router, Axios
 Backend	Node.js, Express
@@ -66,7 +66,7 @@ External API
 Method	Endpoint	Description
 GET	https://zenquotes.io/api/random
 	Retrieve a random motivational quote
-Deployment
+## Deployment
 
 Frontend hosted on Vercel
 
@@ -74,12 +74,12 @@ Backend hosted on Render
 
 PostgreSQL database hosted on Neon
 
-Demo Video
+## Demo Video
 
 YouTube demo link:
 [PLACEHOLDER – INSERT LINK HERE]
 
-Future Enhancements
+## Future Enhancements
 
 These features are planned for future versions of StudySync+:
 
