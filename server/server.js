@@ -1,3 +1,6 @@
+console.log("📦 Running server.js from folder:", __dirname);
+console.log("📦 PORT env:", process.env.PORT);
+
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
