@@ -1,39 +1,52 @@
-const express = require('express');
-const cors = require('cors');
-require('dotenv').config();
+const express = require("express");
+const cors = require("cors");
+require("dotenv").config();
 
 // Initialize DB connection
-const db = require('./db');
+const db = require("./db");
 
 // Import routes
-const authRoutes = require('./routes/auth');
-const taskRoutes = require('./routes/tasks');
+const authRoutes = require("./routes/auth");
+const taskRoutes = require("./routes/tasks");
 const quoteRoutes = require("./routes/quotes");
 
 const app = express();
 
+// CORS configuration
+const allowedOrigins = [
+  "https://study-sync-plus.vercel.app", // your frontend domain
+  "http://localhost:5173"               // for local development
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
 // Middleware
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use("/api/quote", quoteRoutes);
-app.use('/api/auth', authRoutes);
-app.use('/api/tasks', taskRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/tasks", taskRoutes);
 
-// Basic root check
-app.get('/', (req, res) => {
-  res.send('StudySync+ backend is running');
+// Root route
+app.get("/", (req, res) => {
+  res.send("StudySync+ backend is running");
 });
 
-// Test DB connection route
+// DB test route
 app.get("/test-db", async (req, res) => {
   try {
     const result = await db.query("SELECT NOW()");
     res.json({ message: "Database connected!", time: result.rows[0] });
   } catch (err) {
-    console.error(err);
+    console.error("Database error:", err);
     res.status(500).json({ error: "Database connection failed" });
   }
 });
