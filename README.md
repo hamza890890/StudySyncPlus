@@ -7,7 +7,7 @@ StudySync+ is a full-stack web application designed to help students and self-le
 
 Many students struggle to maintain focus and consistency while studying independently. StudySync+ addresses this by providing a structured task management system along with daily motivational content to encourage consistent learning habits.
 
-Intended Users
+## Intended Users
 
 Students
 
@@ -15,7 +15,7 @@ Online learners
 
 Anyone aiming to improve their study habits
 
-Core Features
+## Core Features
 
 User authentication (register, log in, log out) using JSON Web Tokens (JWT)
 
