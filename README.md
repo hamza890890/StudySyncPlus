@@ -119,48 +119,55 @@ YouTube demo link:
 
 ## Setup Instructions (Local Development)
 1. Clone the Repository
+```bash
 git clone https://github.com/hamza890890/StudySyncPlus.git
 cd StudySyncPlus
-
-2. Install Dependencies
+```
+3. Install Dependencies
+```bash
 Backend:
 cd server
 npm install
-
+```
 Frontend:
+```bash
 cd ../client
 npm install
-
+```
 3. Configure Environment Variables
+```bash
 server/.env
 DATABASE_URL=your_neon_connection_string
 JWT_SECRET=your_secret_key
-
+```
+```bash
 client/.env
 VITE_API_BASE_URL=http://localhost:5000/api
-
+```
 4. Run the Backend
+```bash
 cd server
 npm run dev
-
-5. Run the Frontend
+```
+6. Run the Frontend
+```bash
 cd client
 npm run dev
-
+```
 ## Design Choices
-# Why React?
+### Why React?
 
 React provided a simple way to manage UI state and combine components into a cohesive interface. React Router made page navigation intuitive, and Vite offered fast development builds.
 
-Why Express?
+### Why Express?
 
 Express is lightweight, flexible, and ideal for small-to-medium projects. It allowed clean routing and easy integration with middleware like JWT authentication and CORS.
 
-Why PostgreSQL (Neon)?
+### Why PostgreSQL (Neon)?
 
 A relational database aligns well with structured user + task relationships. Neon offers fast, free cloud-hosted PostgreSQL with SSL support, perfect for student projects.
 
-Why Vercel + Render?
+### Why Vercel + Render?
 
 Vercel: optimized for static frontend hosting
 
@@ -168,7 +175,7 @@ Render: free tier for Node.js APIs
 Together, they provide a complete deployment environment with minimal setup.
 
 ## Reflection Write-Up
-What Was Most Challenging?
+### What Was Most Challenging?
 
 The most difficult part of development was deployment — specifically an issue where the backend kept returning generic “Error registering user” alerts. The console showed CORS errors, 404 errors, and misleading messages like:
 
@@ -189,7 +196,7 @@ Every register or login attempt failed before Express could handle the route.
 
 Once the quotes were removed, the backend connected correctly and all routes immediately started functioning.
 
-What Am I Proud Of?
+### What Am I Proud Of?
 
 Successfully deploying a full-stack app using three separate services
 
@@ -199,7 +206,7 @@ Building a clean UI and functional REST API
 
 Securing authentication using JWT
 
-What I Learned
+### What I Learned
 
 Deployment debugging is often much harder than local debugging
 
