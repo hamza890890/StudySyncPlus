@@ -1,4 +1,4 @@
-### StudySync+
+# StudySync+
 
 StudySync+ is a full-stack web application designed to help students and self-learners organize their study tasks, track progress, and stay motivated. With built-in task management and daily motivational quotes, StudySync+ makes consistent learning both productive and inspiring.
 
