@@ -134,7 +134,7 @@ Frontend:
 cd ../client
 npm install
 ```
-3. Configure Environment Variables
+3. Configure Environment Variables (setup your own Neon Database and JWT Key)
 ```bash
 server/.env
 DATABASE_URL=your_neon_connection_string
