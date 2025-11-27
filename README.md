@@ -142,7 +142,7 @@ JWT_SECRET=your_secret_key
 ```
 ```bash
 client/.env
-VITE_API_BASE_URL=http://localhost:5000/api
+VITE_API_BASE_URL=https://studysyncplus.onrender.com/api
 ```
 4. Run the Backend
 ```bash
