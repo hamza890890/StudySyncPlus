@@ -98,14 +98,123 @@ Backend hosted on Render
 
 PostgreSQL database hosted on Neon
 
-## Demo Video
+## Deployed Application
+
+Frontend:
+
+https://study-sync-plus.vercel.app
+
+Backend:
+
+https://studysyncplus.onrender.com
+
+## Demo Video (MVP Demo) 
 
 YouTube demo link:
 https://youtu.be/v8L5gMcQrz0
 
-## Future Enhancements
+## Demo Video (Final Term Project - Deployed Application) 
 
-These features are planned for future versions of StudySync+:
+YouTube demo link:
+
+## Setup Instructions (Local Development)
+1. Clone the Repository
+git clone https://github.com/hamza890890/StudySyncPlus.git
+cd StudySyncPlus
+
+2. Install Dependencies
+Backend:
+cd server
+npm install
+
+Frontend:
+cd ../client
+npm install
+
+3. Configure Environment Variables
+server/.env
+DATABASE_URL=your_neon_connection_string
+JWT_SECRET=your_secret_key
+
+client/.env
+VITE_API_BASE_URL=http://localhost:5000/api
+
+4. Run the Backend
+cd server
+npm run dev
+
+5. Run the Frontend
+cd client
+npm run dev
+
+## Design Choices
+# Why React?
+
+React provided a simple way to manage UI state and combine components into a cohesive interface. React Router made page navigation intuitive, and Vite offered fast development builds.
+
+Why Express?
+
+Express is lightweight, flexible, and ideal for small-to-medium projects. It allowed clean routing and easy integration with middleware like JWT authentication and CORS.
+
+Why PostgreSQL (Neon)?
+
+A relational database aligns well with structured user + task relationships. Neon offers fast, free cloud-hosted PostgreSQL with SSL support, perfect for student projects.
+
+Why Vercel + Render?
+
+Vercel: optimized for static frontend hosting
+
+Render: free tier for Node.js APIs
+Together, they provide a complete deployment environment with minimal setup.
+
+## Reflection Write-Up
+What Was Most Challenging?
+
+The most difficult part of development was deployment — specifically an issue where the backend kept returning generic “Error registering user” alerts. The console showed CORS errors, 404 errors, and misleading messages like:
+
+Cannot GET /api/auth/register
+
+
+This made it seem like the route didn't exist, but the real issue was:
+
+Render Environment Variable Bug
+
+The DATABASE_URL was stored with quotes, like:
+
+'DATABASE_URL'='postgres://...'
+
+
+Render treated the ' characters literally, which broke PostgreSQL connections internally.
+Every register or login attempt failed before Express could handle the route.
+
+Once the quotes were removed, the backend connected correctly and all routes immediately started functioning.
+
+What Am I Proud Of?
+
+Successfully deploying a full-stack app using three separate services
+
+Debugging real-world issues involving CORS, database connections, and route handling
+
+Building a clean UI and functional REST API
+
+Securing authentication using JWT
+
+What I Learned
+
+Deployment debugging is often much harder than local debugging
+
+CORS errors frequently hide deeper issues
+
+Environment variables must be formatted precisely
+
+Directly testing backend routes (/test-db, Postman, curl) is crucial
+
+How to structure a full-stack application from backend to frontend
+
+How to integrate external APIs into real applications
+## Future Enhancements 
+
+These features were planned for future versions of StudySync+ if I had more time:
 
 Study analytics dashboard
 
@@ -123,7 +232,7 @@ License
 
 This project is licensed under the MIT License.
 
-Acknowledgments
+## Acknowledgments
 
 ZenQuotes.io for motivational quote data
 
