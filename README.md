@@ -124,8 +124,8 @@ git clone https://github.com/hamza890890/StudySyncPlus.git
 cd StudySyncPlus
 ```
 3. Install Dependencies
-```bash
 Backend:
+```bash
 cd server
 npm install
 ```
@@ -178,18 +178,18 @@ Together, they provide a complete deployment environment with minimal setup.
 ### What Was Most Challenging?
 
 The most difficult part of development was deployment — specifically an issue where the backend kept returning generic “Error registering user” alerts. The console showed CORS errors, 404 errors, and misleading messages like:
-
+```bash
 Cannot GET /api/auth/register
-
+```
 
 This made it seem like the route didn't exist, but the real issue was:
 
 Render Environment Variable Bug
 
 The DATABASE_URL was stored with quotes, like:
-
+```bash
 'DATABASE_URL'='postgres://...'
-
+```
 
 Render treated the ' characters literally, which broke PostgreSQL connections internally.
 Every register or login attempt failed before Express could handle the route.
