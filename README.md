@@ -113,10 +113,6 @@ https://studysyncplus.onrender.com
 YouTube demo link:
 https://youtu.be/v8L5gMcQrz0
 
-## Demo Video (Final Term Project - Deployed Application) 
-
-YouTube demo link:
-
 ## Setup Instructions (Local Development)
 1. Clone the Repository
 ```bash
