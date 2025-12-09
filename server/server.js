@@ -28,7 +28,7 @@ app.use(
     credentials: false,
   })
 );
-// Optional: explicitly handle preflight
+// Used to explicitly handle preflight
 app.options("*", cors());
 // Middleware
 app.use(express.json());

@@ -33,7 +33,7 @@ export default function Dashboard() {
 
     async function fetchQuote() {
         try {
-            const res = await API.get("/quote"); // use your backend route
+            const res = await API.get("/quote");
             const data = res.data;
             setQuote(`"${data.quote}" — ${data.author}`);
         } catch (err) {
