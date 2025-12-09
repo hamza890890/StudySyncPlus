@@ -17,8 +17,8 @@ const app = express();
 
 // CORS configuration
 const allowedOrigins = [
-  "https://study-sync-plus.vercel.app", // your frontend domain
-  "http://localhost:5173"               // for local development
+  "https://study-sync-plus.vercel.app", 
+  "http://localhost:5173"               
 ];
 
 app.use(
