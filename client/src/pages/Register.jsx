@@ -60,6 +60,16 @@ export default function Register() {
         />
         <button>Register</button>
       </form>
+      <p style={{ marginTop: "10px" }}>
+        Already have an account?{" "}
+        <span
+          onClick={() => navigate("/login")}
+          style={{ color: "#007bff", cursor: "pointer", textDecoration: "underline" }}
+        >
+          Login here
+        </span>
+      </p>
+
     </div>
   );
 }
