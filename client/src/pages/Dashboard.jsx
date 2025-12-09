@@ -83,6 +83,7 @@ export default function Dashboard() {
 
     return (
         <div className="container">
+            <h1 className="app-title">StudySync+</h1>
             <h2>Welcome, {localStorage.getItem("username")}!</h2>
             <blockquote style={{ fontStyle: "italic", margin: "1rem 0" }}>
                 {quote}

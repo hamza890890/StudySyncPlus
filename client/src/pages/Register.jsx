@@ -32,6 +32,7 @@ export default function Register() {
 
   return (
     <div className="container">
+      <h1 className="app-title">StudySync+</h1>
       <h2>Register</h2>
       <form onSubmit={handleRegister}>
         <input
