@@ -10,6 +10,13 @@ export default function Register() {
 
   async function handleRegister(e) {
     e.preventDefault();
+
+    // Checks to see if the Email is a valid email 
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
     try {
       const res = await API.post("/auth/register", { username, email, password });
       localStorage.setItem("token", res.data.token);
